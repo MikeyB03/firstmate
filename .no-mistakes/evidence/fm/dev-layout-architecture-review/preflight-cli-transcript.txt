@@ -1,88 +1,154 @@
-=== 1) clean managed clone + proposed cache (text) ===
+=== 1. clean registered checkout + proposed cache: ready, detect-only ===
+$ fm-project-layout-preflight.sh --home /private/tmp/fmpl-demo2/home --project demo --cache-root /private/tmp/fmpl-demo2/demo-cache.git
 project layout preflight: ready
 schema: fm-project-layout-preflight.v1
 read-only: true
-home: /private/tmp/plp-demo.DHYO5K/fmhome
-project: /private/tmp/plp-demo.DHYO5K/fmhome/projects/demo
+home: /private/tmp/fmpl-demo2/home
+project: /private/tmp/fmpl-demo2/home/projects/demo
 registered posture: direct-PR yolo=off
-origin: file:///private/tmp/plp-demo.DHYO5K/source.git
-git dirs: git=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git common=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git
+origin: file:///private/tmp/fmpl-demo2/source.git
+git dirs: git=/private/tmp/fmpl-demo2/home/projects/demo/.git common=/private/tmp/fmpl-demo2/home/projects/demo/.git
 branch: current=main default=main ahead=0 behind=0
 object format: sha1
 live evidence: worktrees=1 extra=0 tasks=0 endpoints=0 orca=0 pending-replies=0
-cache proposal: /private/tmp/plp-demo.DHYO5K/demo-cache.git locality=local format=sha1
+cache proposal: /private/tmp/fmpl-demo2/demo-cache.git locality=local format=sha1
 canonical navigation path: not-supplied
 blockers: 0
 warnings: 0
-evidence fingerprint: posix-cksum:3418522399:832
+evidence fingerprint: posix-cksum:892769709:798
 cutover authority: false (a future mutating tool must re-check every fact)
 exit=0
 
-=== 2) same inputs, JSON ===
-{"schema":"fm-project-layout-preflight.v1","status":"ready","read_only":true,"home":{"requested":"/private/tmp/plp-demo.DHYO5K/fmhome","physical":"/private/tmp/plp-demo.DHYO5K/fmhome","uid":"501","mode":"755"},"project":{"name":"demo","requested":"/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo","physical":"/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo","git_dir":"/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git","common_dir":"/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git","uid":"501","mode":"755"},"registration":{"registered":true,"mode":"direct-PR","yolo":"off"},"repository":{"origin_present":true,"origin":"file:///private/tmp/plp-demo.DHYO5K/source.git","origin_identity":"posix-cksum:3760649328:46","default_branch":"main","current_branch":"main","object_format":"sha1","dirty":false,"off_default":false,"diverged":false,"ahead":0,"behind":0,"unpushed_commits":0,"shallow":false,"partial":false,"promisor":false,"replace_refs":0,"grafts":false,"alternate":false,"no_mistakes_remote":false},"live":{"worktree_count":1,"extra_worktree_count":0,"no_mistakes_worktree_count":0,"task_ids":[],"endpoint_count":0,"orca_count":0,"pending_reply_count":0,"sibling_borrower_count":0,"remote_borrower_count":0,"duplicate_branch_ids":[]},"proposal":{"cache_root":"/private/tmp/plp-demo.DHYO5K/demo-cache.git","cache_physical":"/private/tmp/plp-demo.DHYO5K/demo-cache.git","cache_uid":"501","cache_mode":"700","cache_filesystem":"/dev/disk3s5","cache_locality":"local","cache_is_git":true,"cache_is_bare":true,"cache_origin":"file:///private/tmp/plp-demo.DHYO5K/source.git","cache_object_format":"sha1","canonical_path":"","canonical_physical":"","canonical_git_dir":"","canonical_common_dir":"","canonical_origin":""},"blockers":[],"warnings":[],"fingerprint":{"algorithm":"posix-cksum","value":"posix-cksum:3418522399:832","cutover_authority":false}}
-exit=0
+=== 2. same run as JSON (schema fm-project-layout-preflight.v1) ===
+{
+    "schema": "fm-project-layout-preflight.v1",
+    "status": "ready",
+    "read_only": true,
+    "home": {
+        "requested": "/private/tmp/fmpl-demo2/home",
+        "physical": "/private/tmp/fmpl-demo2/home",
+        "uid": "501",
+        "mode": "700"
+    },
+    "project": {
+        "name": "demo",
+        "requested": "/private/tmp/fmpl-demo2/home/projects/demo",
+        "physical": "/private/tmp/fmpl-demo2/home/projects/demo",
+        "git_dir": "/private/tmp/fmpl-demo2/home/projects/demo/.git",
+        "common_dir": "/private/tmp/fmpl-demo2/home/projects/demo/.git",
+        "uid": "501",
+        "mode": "755"
+    },
+    "registration": {
+        "registered": true,
+        "mode": "direct-PR",
+        "yolo": "off"
+    },
+    "repository": {
+        "origin_present": true,
+        "origin": "file:///private/tmp/fmpl-demo2/source.git",
+        "origin_identity": "posix-cksum:813502541:41",
+        "default_branch": "main",
+        "current_branch": "main",
+        "object_format": "sha1",
+        "dirty": false,
+        "off_default": false,
+        "diverged": false,
+        "ahead": 0,
+        "behind": 0,
+        "unpushed_commits": 0,
+        "shallow": false,
+        "partial": false,
+        "promisor": false,
+        "replace_refs": 0,
+        "grafts": false,
+        "alternate": false,
+        "no_mistakes_remote": false
+    },
+    "live": {
+        "worktree_count": 1,
+        "extra_worktree_count": 0,
+        "no_mistakes_worktree_count": 0,
+        "task_ids": [],
+        "endpoint_count": 0,
+        "orca_count": 0,
+        "pending_reply_count": 0,
+        "sibling_borrower_count": 0,
+        "remote_borrower_count": 0,
+        "duplicate_branch_ids": []
+    },
+    "proposal": {
+        "cache_root": "/private/tmp/fmpl-demo2/demo-cache.git",
+        "cache_physical": "/private/tmp/fmpl-demo2/demo-cache.git",
+        "cache_uid": "501",
+        "cache_mode": "700",
+        "cache_filesystem": "/dev/disk3s5",
+        "cache_locality": "local",
+        "cache_is_git": true,
+        "cache_is_bare": true,
+        "cache_origin": "file:///private/tmp/fmpl-demo2/source.git",
+        "cache_object_format": "sha1",
+        "canonical_path": "",
+        "canonical_physical": "",
+        "canonical_git_dir": "",
+        "canonical_common_dir": "",
+        "canonical_origin": ""
+    },
+    "blockers": [],
+    "warnings": [],
+    "fingerprint": {
+        "algorithm": "posix-cksum",
+        "value": "posix-cksum:892769709:798",
+        "cutover_authority": false
+    }
+}
+exit=
 
-=== 3) dirty worktree blocks (text) ===
+=== 3. determinism + invariance ===
+repeat text output byte-for-byte identical: YES
+project refs/config/git-dir/registry/state unchanged: YES
+cache repository untouched (no fetch/clone/alternates): YES
+no alternates file written: YES
+
+=== 4. blockers: dirty worktree + foreign-origin cache ===
 project layout preflight: blocked
 schema: fm-project-layout-preflight.v1
 read-only: true
-home: /private/tmp/plp-demo.DHYO5K/fmhome
-project: /private/tmp/plp-demo.DHYO5K/fmhome/projects/demo
+home: /private/tmp/fmpl-demo2/home
+project: /private/tmp/fmpl-demo2/home/projects/demo
 registered posture: direct-PR yolo=off
-origin: file:///private/tmp/plp-demo.DHYO5K/source.git
-git dirs: git=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git common=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git
+origin: file:///private/tmp/fmpl-demo2/source.git
+git dirs: git=/private/tmp/fmpl-demo2/home/projects/demo/.git common=/private/tmp/fmpl-demo2/home/projects/demo/.git
+branch: current=main default=main ahead=0 behind=0
+object format: sha1
+live evidence: worktrees=1 extra=0 tasks=0 endpoints=0 orca=0 pending-replies=0
+cache proposal: /private/tmp/fmpl-demo2/other.git locality=local format=sha1
+canonical navigation path: not-supplied
+blockers: 2
+- dirty_worktree: Project checkout has uncommitted or untracked changes
+- cache_no_origin: Proposed cache has no origin remote
+warnings: 0
+evidence fingerprint: posix-cksum:3523838697:776
+cutover authority: false (a future mutating tool must re-check every fact)
+exit=1
+
+=== 5. unregistered project fails closed ===
+project layout preflight: blocked
+schema: fm-project-layout-preflight.v1
+read-only: true
+home: /private/tmp/fmpl-demo2/home
+project: /private/tmp/fmpl-demo2/home/projects/stray
+registered posture: unknown yolo=unknown
+origin: file:///private/tmp/fmpl-demo2/source.git
+git dirs: git=/private/tmp/fmpl-demo2/home/projects/stray/.git common=/private/tmp/fmpl-demo2/home/projects/stray/.git
 branch: current=main default=main ahead=0 behind=0
 object format: sha1
 live evidence: worktrees=1 extra=0 tasks=0 endpoints=0 orca=0 pending-replies=0
 cache proposal: not-supplied locality=not-supplied format=unknown
 canonical navigation path: not-supplied
 blockers: 1
-- dirty_worktree: Project checkout has uncommitted or untracked changes
+- unregistered_project: Project is not present in the supplied home's registry
 warnings: 0
-evidence fingerprint: posix-cksum:2501799778:723
+evidence fingerprint: posix-cksum:3274745143:716
 cutover authority: false (a future mutating tool must re-check every fact)
 exit=1
-
-=== 4) cache origin mismatch blocks ===
-project layout preflight: blocked
-schema: fm-project-layout-preflight.v1
-read-only: true
-home: /private/tmp/plp-demo.DHYO5K/fmhome
-project: /private/tmp/plp-demo.DHYO5K/fmhome/projects/demo
-registered posture: direct-PR yolo=off
-origin: file:///private/tmp/plp-demo.DHYO5K/source.git
-git dirs: git=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git common=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git
-branch: current=main default=main ahead=0 behind=0
-object format: sha1
-live evidence: worktrees=1 extra=0 tasks=0 endpoints=0 orca=0 pending-replies=0
-cache proposal: /private/tmp/plp-demo.DHYO5K/wrong-cache.git locality=local format=sha1
-canonical navigation path: not-supplied
-blockers: 1
-- cache_origin_mismatch: Proposed cache origin differs from the control checkout origin
-warnings: 0
-evidence fingerprint: posix-cksum:1096396209:834
-cutover authority: false (a future mutating tool must re-check every fact)
-exit=1
-
-=== 5) missing cache path is never created (detect-only) ===
-project layout preflight: blocked
-schema: fm-project-layout-preflight.v1
-read-only: true
-home: /private/tmp/plp-demo.DHYO5K/fmhome
-project: /private/tmp/plp-demo.DHYO5K/fmhome/projects/demo
-registered posture: direct-PR yolo=off
-origin: file:///private/tmp/plp-demo.DHYO5K/source.git
-git dirs: git=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git common=/private/tmp/plp-demo.DHYO5K/fmhome/projects/demo/.git
-branch: current=main default=main ahead=0 behind=0
-object format: sha1
-live evidence: worktrees=1 extra=0 tasks=0 endpoints=0 orca=0 pending-replies=0
-cache proposal: /private/tmp/plp-demo.DHYO5K/absent-cache.git locality=local format=unknown
-canonical navigation path: not-supplied
-blockers: 1
-- cache_missing: Proposed cache repository does not exist; preflight will not create it
-warnings: 0
-evidence fingerprint: posix-cksum:3990585482:761
-cutover authority: false (a future mutating tool must re-check every fact)
-exit=1
-confirmed: /private/tmp/plp-demo.DHYO5K/absent-cache.git still absent
-TMPDIR=/private/tmp/plp-demo.DHYO5K

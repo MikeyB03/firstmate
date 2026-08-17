@@ -1,0 +1,23 @@
+=== 1. ready posture (text) ===
+project layout preflight: ready
+schema: fm-project-layout-preflight.v1
+read-only: true
+home: <TMP>/fm-home
+project: <TMP>/fm-home/projects/demo
+registered posture: direct-PR yolo=off
+origin: file://<TMP>/src.git
+git dirs: git=<TMP>/fm-home/projects/demo/.git common=<TMP>/fm-home/projects/demo/.git
+branch: current=main default=main ahead=0 behind=0
+object format: sha1
+live evidence: worktrees=1 extra=0 tasks=0 endpoints=0 orca=0 pending-replies=0
+cache proposal: <TMP>/demo-cache.git locality=local format=sha1
+canonical navigation path: not-supplied
+blockers: 0
+warnings: 0
+evidence fingerprint: posix-cksum:4260972489:816
+cutover authority: false (a future mutating tool must re-check every fact)
+exit=0
+
+=== 2. same run, JSON ===
+{"schema":"fm-project-layout-preflight.v1","status":"ready","read_only":true,"home":{"requested":"<TMP>/fm-home","physical":"<TMP>/fm-home","uid":"501","mode":"755"},"project":{"name":"demo","requested":"<TMP>/fm-home/projects/demo","physical":"<TMP>/fm-home/projects/demo","git_dir":"<TMP>/fm-home/projects/demo/.git","common_dir":"<TMP>/fm-home/projects/demo/.git","uid":"501","mode":"755"},"registration":{"registered":true,"mode":"direct-PR","yolo":"off"},"repository":{"origin_present":true,"origin":"file://<TMP>/src.git","origin_identity":"posix-cksum:2156380555:41","default_branch":"main","current_branch":"main","object_format":"sha1","dirty":false,"off_default":false,"diverged":false,"ahead":0,"behind":0,"unpushed_commits":0,"shallow":false,"partial":false,"promisor":false,"replace_refs":0,"grafts":false,"alternate":false,"no_mistakes_remote":false},"live":{"worktree_count":1,"extra_worktree_count":0,"no_mistakes_worktree_count":0,"task_ids":[],"endpoint_count":0,"orca_count":0,"pending_reply_count":0,"sibling_borrower_count":0,"remote_borrower_count":0,"duplicate_branch_ids":[]},"proposal":{"cache_root":"<TMP>/demo-cache.git","cache_physical":"<TMP>/demo-cache.git","cache_uid":"501","cache_mode":"700","cache_filesystem":"/dev/disk3s5","cache_locality":"local","cache_is_git":true,"cache_is_bare":true,"cache_origin":"file://<TMP>/src.git","cache_object_format":"sha1","canonical_path":"","canonical_physical":"","canonical_git_dir":"","canonical_common_dir":"","canonical_origin":""},"blockers":[],"warnings":[],"fingerprint":{"algorithm":"posix-cksum","value":"posix-cksum:4260972489:816","cutover_authority":false}}
+exit=0

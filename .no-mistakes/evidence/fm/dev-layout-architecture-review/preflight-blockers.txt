@@ -1,0 +1,34 @@
+=== 3. determinism: two consecutive JSON runs diffed ===
+byte-for-byte identical: yes
+
+=== 4. blockers: dirty tree + unpushed commit + wrong-origin cache ===
+project layout preflight: blocked
+schema: fm-project-layout-preflight.v1
+read-only: true
+home: <TMP>/fm-home
+project: <TMP>/fm-home/projects/demo
+registered posture: direct-PR yolo=off
+origin: file://<TMP>/src.git
+git dirs: git=<TMP>/fm-home/projects/demo/.git common=<TMP>/fm-home/projects/demo/.git
+branch: current=main default=main ahead=1 behind=0
+object format: sha1
+live evidence: worktrees=1 extra=0 tasks=0 endpoints=0 orca=0 pending-replies=0
+cache proposal: <TMP>/wrong-cache.git locality=local format=sha1
+canonical navigation path: not-supplied
+blockers: 4
+- dirty_worktree: Project checkout has uncommitted or untracked changes
+- default_ahead: Local default branch is ahead of its origin default ref
+- unpushed_commits: Local branches contain commits not reachable from any remote ref
+- cache_origin_mismatch: Proposed cache origin differs from the control checkout origin
+warnings: 0
+evidence fingerprint: posix-cksum:2097231762:875
+cutover authority: false (a future mutating tool must re-check every fact)
+exit=1
+
+=== 5. secret redaction: credential-bearing origin ===
+project layout preflight: blocked
+origin: https://<redacted>@example.invalid/x.git
+blockers: 4
+- origin_embedded_credentials: Origin contains embedded HTTP credentials or query/fragment material; sensitive text was redacted
+- default_ahead: Local default branch is ahead of its origin default ref
+exit=

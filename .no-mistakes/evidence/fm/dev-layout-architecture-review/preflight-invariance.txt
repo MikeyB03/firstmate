@@ -1,0 +1,4 @@
+=== 6. invariance: home/state/config/refs/git-dir checksums before vs after two preflight runs ===
+unchanged: yes (0 differing lines)
+cache repo untouched:
+3a750b7800fdb0f9de0906ab02197e2bf71df3e0 refs/heads/main

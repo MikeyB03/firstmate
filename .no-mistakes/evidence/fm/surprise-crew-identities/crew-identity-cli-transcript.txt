@@ -1,0 +1,134 @@
+=== captain-facing fleet view (config/crew-identities.json present) ===
+# Fleet View
+
+Schema: fm-fleet-snapshot.v1
+Home: /tmp/fmhome-id
+Primary identity: Lt Pullings
+
+## Under Way
+| ID | Identity | Current | Kind | Repo/Project | Backend | Endpoint | Artifact | Path | Watch / return channel |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| llm-usage-dashboard | Dr Maturin | unknown / none | secondmate | - | tmux | unknown / not_checked | - | - | bin/fm-send.sh fm-llm-usage-dashboard '<request>' - read status/doc return channel; do not routinely fm-peek a secondmate for answers |
+| npi-brain | Lt Babbington | unknown / none | secondmate | - | tmux | unknown / not_checked | - | - | bin/fm-send.sh fm-npi-brain '<request>' - read status/doc return channel; do not routinely fm-peek a secondmate for answers |
+
+## Queued
+
+=== crew identity CLI ===
+$ fm-crew-identity.sh assignment captain
+Resolve Firstmate's optional presentation-only crew identities.
+
+Local schema owner: docs/configuration.md "Crew identities".
+Built-in roster data lives under rosters/<roster>.json.
+Mechanical task ids, kind values, endpoint selectors, and recovery bindings
+never depend on this layer.
+
+Usage:
+  fm-crew-identity.sh validate [<config-file>]
+  fm-crew-identity.sh assignment <captain|primary|agent> [<task-id>]
+  fm-crew-identity.sh render <roster> <identity>
+  fm-crew-identity.sh space-label <roster> <identity>
+  fm-crew-identity.sh check-active <task-id> <roster> <identity> [<state-dir>]
+$ fm-crew-identity.sh assignment primary
+Resolve Firstmate's optional presentation-only crew identities.
+
+Local schema owner: docs/configuration.md "Crew identities".
+Built-in roster data lives under rosters/<roster>.json.
+Mechanical task ids, kind values, endpoint selectors, and recovery bindings
+never depend on this layer.
+
+Usage:
+  fm-crew-identity.sh validate [<config-file>]
+  fm-crew-identity.sh assignment <captain|primary|agent> [<task-id>]
+  fm-crew-identity.sh render <roster> <identity>
+  fm-crew-identity.sh space-label <roster> <identity>
+  fm-crew-identity.sh check-active <task-id> <roster> <identity> [<state-dir>]
+$ fm-crew-identity.sh assignment agent npi-brain
+Resolve Firstmate's optional presentation-only crew identities.
+
+Local schema owner: docs/configuration.md "Crew identities".
+Built-in roster data lives under rosters/<roster>.json.
+Mechanical task ids, kind values, endpoint selectors, and recovery bindings
+never depend on this layer.
+
+Usage:
+  fm-crew-identity.sh validate [<config-file>]
+  fm-crew-identity.sh assignment <captain|primary|agent> [<task-id>]
+  fm-crew-identity.sh render <roster> <identity>
+  fm-crew-identity.sh space-label <roster> <identity>
+  fm-crew-identity.sh check-active <task-id> <roster> <identity> [<state-dir>]
+$ fm-crew-identity.sh space-label master-and-commander thomas-pullings
+Resolve Firstmate's optional presentation-only crew identities.
+
+Local schema owner: docs/configuration.md "Crew identities".
+Built-in roster data lives under rosters/<roster>.json.
+Mechanical task ids, kind values, endpoint selectors, and recovery bindings
+never depend on this layer.
+
+Usage:
+  fm-crew-identity.sh validate [<config-file>]
+  fm-crew-identity.sh assignment <captain|primary|agent> [<task-id>]
+  fm-crew-identity.sh render <roster> <identity>
+  fm-crew-identity.sh space-label <roster> <identity>
+  fm-crew-identity.sh check-active <task-id> <roster> <identity> [<state-dir>]
+$ fm-crew-identity.sh space-label master-and-commander william-babbington
+Resolve Firstmate's optional presentation-only crew identities.
+
+Local schema owner: docs/configuration.md "Crew identities".
+Built-in roster data lives under rosters/<roster>.json.
+Mechanical task ids, kind values, endpoint selectors, and recovery bindings
+never depend on this layer.
+
+Usage:
+  fm-crew-identity.sh validate [<config-file>]
+  fm-crew-identity.sh assignment <captain|primary|agent> [<task-id>]
+  fm-crew-identity.sh render <roster> <identity>
+  fm-crew-identity.sh space-label <roster> <identity>
+  fm-crew-identity.sh check-active <task-id> <roster> <identity> [<state-dir>]
+$ fm-crew-identity.sh render master-and-commander stephen-maturin
+Resolve Firstmate's optional presentation-only crew identities.
+
+Local schema owner: docs/configuration.md "Crew identities".
+Built-in roster data lives under rosters/<roster>.json.
+Mechanical task ids, kind values, endpoint selectors, and recovery bindings
+never depend on this layer.
+
+Usage:
+  fm-crew-identity.sh validate [<config-file>]
+  fm-crew-identity.sh assignment <captain|primary|agent> [<task-id>]
+  fm-crew-identity.sh render <roster> <identity>
+  fm-crew-identity.sh space-label <roster> <identity>
+  fm-crew-identity.sh check-active <task-id> <roster> <identity> [<state-dir>]
+$ fm-crew-identity.sh render master-and-commander william-mowett
+Resolve Firstmate's optional presentation-only crew identities.
+
+Local schema owner: docs/configuration.md "Crew identities".
+Built-in roster data lives under rosters/<roster>.json.
+Mechanical task ids, kind values, endpoint selectors, and recovery bindings
+never depend on this layer.
+
+Usage:
+  fm-crew-identity.sh validate [<config-file>]
+  fm-crew-identity.sh assignment <captain|primary|agent> [<task-id>]
+  fm-crew-identity.sh render <roster> <identity>
+  fm-crew-identity.sh space-label <roster> <identity>
+  fm-crew-identity.sh check-active <task-id> <roster> <identity> [<state-dir>]
+$ fm-crew-identity.sh check-active other-task master-and-commander william-mowett  # duplicate refusal
+error: crew identity 'master-and-commander/william-mowett' is reserved for configured task 'pco-projects-mda'; refusing assignment to 'other-task'
+
+=== roster ===
+identities: 32 sources: 5
+
+=== identity-free brief bytes vs base commit bdae21e (home path normalised) ===
+7474693bdec56c47a97816c591bbf5c8
+7474693bdec56c47a97816c591bbf5c8
+byte-identical
+
+=== brief diff: no-identity home vs identity home ===
+2a3,7
+> # Crew identity
+> Crew roster: master-and-commander
+> Crew identity: william-babbington
+> Crew detail: Captain William Babbington - Midshipman, lieutenant, and later post-captain
+> 
+36c41
+---

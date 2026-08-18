@@ -1,0 +1,39 @@
+ok - Herdr identity Space labels are exactly Lt Pullings, Mr Allen, Dr Maturin, and Lt Mowett
+ok - Herdr Space labels suffix the exact registered repository slug for project-owning secondmates
+ok - Herdr version 2 presentation journals stay valid after a crew identity config appears
+ok - Herdr identity renames follow registered-project transitions and still refuse foreign titles
+ok - Herdr Space titles prefer the character identity and exact repository slug over any generic role
+ok - Herdr identity rename preserves an already recorded Space title when no identity config applies
+ok - Herdr identity renames follow recorded task metadata, not later live config edits
+ok - Herdr identity reassignment retitles this home's own prior Space and still refuses foreign titles
+ok - Herdr identity exchange never lets one home adopt or retitle another home's Space
+ok - Herdr reassignment retitles a bound Space with no recorded marker and still refuses unknown titles
+ok - Herdr reassigned primary retitles its exactly bound Space and never adopts one by title
+ok - Herdr reassignment refuses missing, stale, inconsistent, and cross-session Space bindings
+ok - Herdr reassignment retitles a bound project-owning Space, slug and all
+ok - Herdr home Space lookup follows its own identity across registered-project drift
+ok - Herdr identity migration renames only one exact legacy-bound workspace id
+ok - fm_backend_herdr_launcher_identity: a firstmate not running inside herdr has no launcher workspace to inherit
+ok - fm_backend_herdr_launcher_identity: HERDR_ENV=1 without a pane id selects the backend but binds no parent
+ok - fm_backend_herdr_launcher_identity: resolves the launcher's exact workspace even when a same-labeled workspace sorts first
+ok - fm_backend_herdr_launcher_identity: refuses a launcher pane that names a different herdr session
+ok - fm_backend_herdr_launcher_identity: refuses a claimed pane without exact server identity
+ok - fm_backend_herdr_launcher_identity: refuses a launcher pane whose injected socket belongs to another herdr server
+ok - fm_backend_herdr_launcher_identity: refuses when the launcher's own pane no longer resolves
+ok - fm_backend_herdr_launcher_identity: refuses when the launcher's pane and tab disagree about their workspace
+ok - fm_backend_herdr_launcher_identity: refuses when the launcher's workspace is gone from its own session
+ok - fm_backend_herdr_workspace_ensure: reconciles an adopted Space's drifted identity title
+ok - fm_backend_herdr_workspace_ensure: names every ambiguous owned Space with its actual title
+ok - fm_backend_herdr_workspace_ensure: adopts and renames a home-unique legacy-titled Space
+ok - fm_backend_herdr_workspace_ensure: never adopts the session-shared 'firstmate' legacy title
+ok - fm_backend_herdr_workspace_ensure: claims Space ownership only where the query established it
+ok - fm_backend_herdr_container_ensure: surfaces the exact ambiguous-placement refusal instead of a generic failure
+ok - fm_backend_herdr_container_ensure: reuses an existing firstmate workspace without recreating it, and reports no seeded default tab (adopted, not created)
+ok - fm_backend_herdr_create_task: an ADOPTED workspace's pre-existing tab is never pruned (the created-vs-adopted gate)
+ok - Herdr presentation journal version 3 persists the assigned identity across recovery
+ok - herdr presentation cleanup: an ambiguous workspace layout falls back to the plain close
+ok - endpoint confirmed-gone: only structured not-found permits record removal and ambiguous identity refuses
+ok - herdr presentation ordering: a foreign legacy child is warning-only and read-only
+ok - herdr presentation ordering: an ambiguous existing worker block is warning-only and read-only
+ok - herdr presentation ordering: the launcher's exact parent workspace id disambiguates a duplicated home label without moving anything
+ok - herdr presentation reclaim: legacy, cross-home, ambiguous, live/unknown, and focus-unknown cases refuse without mutation
